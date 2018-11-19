@@ -44,11 +44,11 @@ public class Person implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public String getAuthor() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setAuthor(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
