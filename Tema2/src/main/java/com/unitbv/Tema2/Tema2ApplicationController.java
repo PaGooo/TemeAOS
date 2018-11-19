@@ -50,7 +50,11 @@ public class Tema2ApplicationController {
 	public String getAll() {
 		try {
 			List<Person> persons = personDao.readAll();
-			return persons.toString();
+			String x = new String();
+			for (Person person : persons) {
+				x+=person.toString() + "; ";
+			}
+			return x;
 		} catch (Exception e) {
 			return "Failed";
 		}
@@ -68,6 +72,7 @@ public class Tema2ApplicationController {
 		}
 	}
 	
+	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(@RequestParam("id") int id) {
 		try {
 			Person p = personDao.findById(id);
